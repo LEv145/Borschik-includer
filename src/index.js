@@ -1,10 +1,10 @@
-import { promises } from "fs";
+const fs = require("fs")
 
-import { api as borschik_api } from "borschik";
-import { file } from "tmp-promise";
+const borschik_api = require("borschik").api
+const tmp = require("tmp-promise");
 
 
-export class BorschikIncluder {
+class BorschikIncluder {
     /**
      * @param {{
      *      minimize: Boolean
@@ -36,11 +36,11 @@ export class BorschikIncluder {
      */
     async use(sources){
         await Promise.all(sources.map(async (source) => {
-            const {fd, path, cleanup} = await file()
+            const {fd, path, cleanup} = await tmp.file()
 
             await borschik_api({input: source.path, output: path, ...this._opts})
 
-            const contents = await promises.readFile(path, "utf-8")
+            const contents = await fs.promises.readFile(path, "utf-8")
             source.contents = contents
 
             cleanup()
@@ -48,4 +48,9 @@ export class BorschikIncluder {
 
         return sources
     }
+}
+
+
+module.exports = {
+    BorschikIncluder: BorschikIncluder,
 }
