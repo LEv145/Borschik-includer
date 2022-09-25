@@ -1,5 +1,8 @@
 # Borschik includer
 
+## Install
+https://www.npmjs.com/package/borschik-includer
+
 ## How to use
 
 ### Custom bemtree builder
