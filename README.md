@@ -6,6 +6,8 @@ https://www.npmjs.com/package/borschik-includer
 ## How to use
 
 ### Custom bemtree builder (Replacing `_processSources`)
+It may be unreliable, because the `_processSources` method is not documented
+
 ```js
 const bemtree = require("enb-bemxjst/techs/bemtree")
 const borschik_includer = require("borschik-includer")
