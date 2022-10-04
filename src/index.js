@@ -58,7 +58,7 @@ class BorschikIncluder {
  * @returns {{path: String, contents: String}[]}
  */
 async function processSources(sources) {
-    const borschikIncluder = new borschik_includer.BorschikIncluder({
+    const borschikIncluder = new BorschikIncluder({
         minimize: this._borschikMinimize,
         freeze: this._borschikFreeze,
         comments: this._borschikComments,
