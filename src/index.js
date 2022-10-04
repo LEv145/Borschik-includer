@@ -51,6 +51,26 @@ class BorschikIncluder {
 }
 
 
+/**
+ * Processes sources.
+ *
+ * @param {{ path: String, contents: String }[]} sources — objects that contain file information.
+ * @returns {{ path: String, contents: String }[]}
+ */
+async function processSources(sources) {
+    const borschikIncluder = new borschik_includer.BorschikIncluder({
+        minimize: this._borschikMinimize,
+        freeze: this._borschikFreeze,
+        comments: this._borschikComments,
+        tech: this._borschikTech,
+        techOptions: this._borschikTechOptions,
+    })
+    return await borschikIncluder.use(sources)
+}
+
+
+
 module.exports = {
     BorschikIncluder: BorschikIncluder,
+    processSources: processSources,
 }
