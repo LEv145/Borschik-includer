@@ -1,6 +1,7 @@
 # Borschik includer
-You can integrate borschik into bemtree, bemhtml, css, postcss, fileMerge and etc. !!!
-It is modular and does not require assembling into just 1 file for borschik
+You can integrate borschik into bemtree, bemhtml, css, postcss, fileMerge and etc.
+
+It is modular and does not require assembling into just 1 file for borschik!!
 
 ## Install
 https://www.npmjs.com/package/borschik-includer
